@@ -1,0 +1,77 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API de Lumi Terapia",
+    "version": "1.0.0",
+    "description": "API para registrar reflexiones y experiencias terap\u00e9uticas del usuario Lumi."
+  },
+  "servers": [
+    {
+      "url": "https://tu-api.onrender.com"
+    }
+  ],
+  "paths": {
+    "/terapia/registrar": {
+      "post": {
+        "operationId": "registrarReflexion",
+        "summary": "Registrar una reflexi\u00f3n terap\u00e9utica",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "usuario": {
+                    "type": "string"
+                  },
+                  "tipo": {
+                    "type": "string",
+                    "enum": [
+                      "reflexion",
+                      "emocion",
+                      "experiencia",
+                      "suceso"
+                    ]
+                  },
+                  "contenido": {
+                    "type": "string"
+                  },
+                  "fecha": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "usuario",
+                  "tipo",
+                  "contenido"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Reflexi\u00f3n registrada",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mensaje": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

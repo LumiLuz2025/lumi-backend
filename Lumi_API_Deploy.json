@@ -1,0 +1,35 @@
+{
+  "version": 28,
+  "shortcuts": [
+    {
+      "id": "enviar_reflexion_lumi",
+      "name": "Enviar reflexión a Lumi",
+      "description": "Envía una reflexión terapéutica a tu API personal.",
+      "method": "POST",
+      "url": "https://tu-api.onrender.com/terapia/registrar",
+      "bodyType": "custom_text",
+      "bodyContent": "{\"usuario\": \"lumi_usuario_01\", \"tipo\": \"reflexion\", \"contenido\": \"{{input}}\", \"fecha\": \"{{current_date}}\"}",
+      "contentType": "application/json",
+      "authentication": {},
+      "timeout": 30,
+      "retryPolicy": "no_retry",
+      "requestHeaders": [],
+      "variables": [],
+      "icon": "emoji_nature",
+      "feedback": {
+        "successOutput": "Reflexión enviada correctamente a Lumi 🌿",
+        "failureOutput": "No se pudo enviar la reflexión. Verifica la conexión.",
+        "successMessage": "✅ Enviado",
+        "failureMessage": "❌ Error"
+      },
+      "triggers": [
+        {
+          "type": "text_input",
+          "title": "¿Qué deseas registrar hoy?",
+          "message": "Escribe tu reflexión libremente:",
+          "variableKey": "input"
+        }
+      ]
+    }
+  ]
+}

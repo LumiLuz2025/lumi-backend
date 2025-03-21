@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Lumi Terapia",
+  "name_for_model": "lumi_terapia_plugin",
+  "description_for_human": "Registra reflexiones emocionales y experiencias terap\u00e9uticas.",
+  "description_for_model": "Usa esta API para guardar reflexiones del usuario con fecha, tipo y contenido.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://tu-api.onrender.com/openapi.json"
+  },
+  "logo_url": "https://lumi-app.vercel.app/icono.png",
+  "contact_email": "tu-email@ejemplo.com",
+  "legal_info_url": "https://lumi-app.vercel.app/terminos"
+}
